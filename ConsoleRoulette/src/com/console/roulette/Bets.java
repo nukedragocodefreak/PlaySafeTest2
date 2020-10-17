@@ -8,27 +8,25 @@ public class Bets {
 	public void PlayRoulette() {
 		
 		 @SuppressWarnings("resource")
-		Scanner keyboard = new Scanner(System.in);
+		  Scanner userinput = new Scanner(System.in);
 	       Random generator = new Random();
 	       
 	       double amount;
 	       int choice, win = 0, lose = 0, spin = 0;
-	       int number;
-	       int rouletteNum;
-	       int result;
+	       int number, rouletteNum, result;
 	       char response = 'y';
 	       int resultArr[] = new int[36];
 
 	       while (response == 'y' || response == 'Y')
 	       {
 	           System.out.print("Enter your bet amount: ");
-	           amount = keyboard.nextDouble();
+	           amount = userinput.nextDouble();
 	           System.out.print("0 - Even\n1 - Odd\n2 - Number\n");
 	           choice = -1;
 	           while (choice < 0 || choice > 2)
 	           {
 	               System.out.print("Place your bet on: ");
-	               choice = keyboard.nextInt();
+	               choice = userinput.nextInt();
 	           }
 	           number = 0;
 	           if (choice == 2)  
@@ -36,7 +34,7 @@ public class Bets {
 	               while (number < 1 || number > 36)
 	               {
 	                   System.out.print("Place your bet on number(1-36): ");
-	                   number = keyboard.nextInt();
+	                   number = userinput.nextInt();
 	               }
 	           }
 	           rouletteNum = generator.nextInt(37);
@@ -90,7 +88,7 @@ public class Bets {
 	           System.out.println("You have lost " + lose + " games.");
 	           System.out.println("The wheel has been spun " + spin + " times.");          
 	           System.out.print("\nWould you like to play another game? (y/n) ");
-	           response = keyboard.next().charAt(0);
+	           response = userinput.next().charAt(0);
 	                     
 		
 	}
