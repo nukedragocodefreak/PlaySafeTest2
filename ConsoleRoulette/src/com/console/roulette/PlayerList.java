@@ -16,11 +16,10 @@ public class PlayerList {
 	      lines = Files.readAllLines(Paths.get(file), StandardCharsets.UTF_8);
 	    } 
 	    catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
-	    //return lines;
-	    System.out.println(lines.forEach(t -> System.out.println(t)));
+	    //lambda;
+	    lines.forEach(t -> System.out.println(t));
 	    
 	  }
 
